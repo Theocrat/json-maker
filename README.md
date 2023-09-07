@@ -60,7 +60,7 @@ Using client-side HTML 5 (which includes JS 6 and CSS 3) a GUI tool with a drag-
   [X] Functionality: Components created when interface buttons are pressed.
   [X] Components thus created can be placed in the interactive region
   [X] Components thus created are linked by visible lines to parent components.
-  [.] Those components are interactive, response to clicks, allow changing their values and keys
+  [ ] Those components are interactive, response to clicks, allow changing their values and keys
   [X] Those components carry text detailing whats in them
   [X] Components are of different types, depending on datatype
   [ ] Components, once placed, can be dragged and rearranged
@@ -79,8 +79,5 @@ Of course, you are free to deploy a copy of this tool anywhere you please. It us
 
 ### Kaustubh Roy
 Nothing is done unless someone thinks of doing it. The idea of building a drag-and-drop JSON builder using client-side HTML5 was born during a brainstorming session with my colleague and friend [Kaustubh Roy](https://github.com/kaustubhroyvlabs).
-
-We have collaborated before - on my [Random Walk project](https://github.com/Theocrat/RandomWalk) - and Kaustubh has always been a tremendous support and a great source of ideas for me.
-n during a brainstorming session with my colleague and friend [Kaustubh Roy](https://github.com/kaustubhroyvlabs).
 
 We have collaborated before - on my [Random Walk project](https://github.com/Theocrat/RandomWalk) - and Kaustubh has always been a tremendous support and a great source of ideas for me.
