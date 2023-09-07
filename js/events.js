@@ -26,7 +26,12 @@ function deselectAll() {
 
 
 function place(type) {
-    if (interactiveState.type != "change") {
+    if (interactiveState.type == "place") {
+        return
+    }
+
+    if (interactiveState.type == "select") {
+        alert("Please select a parent node first")
         return
     }
 
@@ -37,6 +42,8 @@ function place(type) {
     let arraySelected  = selectedItem.type == "array"
     let objectSelected = selectedItem.type == "object"
     if (!arraySelected && !objectSelected) {
+        alert(`${selectedItem.type} object is not a valid parent. `
+            + `Please select either an Array or an Object`)
         return
     }
 
