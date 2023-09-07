@@ -1,5 +1,6 @@
 function readyDndArea() {
     area = document.querySelector("#constructionArea")
+    output = document.querySelector("#jsonCode")
 
     area.addEventListener("mousemove", function (event) {
         mouse.x = event.offsetX
