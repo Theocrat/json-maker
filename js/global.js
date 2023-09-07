@@ -2,7 +2,7 @@
 const NODE_COLORS = {
     "null":    "#def",
     "boolean": "#fde",
-    "int":     "#8fd",
+    "int":     "#8ef",
     "float":   "#8df",
     "string":  "#fd6",
     "array":   "#ff8",
@@ -59,10 +59,20 @@ class DndNode {
         let color = NODE_COLORS[this.type]
 
         area.innerHTML += `
-        <rect id="${this.id}" x="${this.x}" y="${this.y}"
-              fill="${color}" stroke="black" stroke-width="1px"
-              width="128px", height="64px" 
-              onclick="selectNode(${this.id})" />
+        <rect id="${this.id}" 
+            x="${this.x}" y="${this.y}"
+            fill="${color}" stroke="black" stroke-width="1px"
+            width="128px", height="64px" 
+            onclick="selectNode(${this.id})" 
+        />
+        
+        <text id="t${this.id}" x="${this.x}" y="${this.y}" class="name-label">
+            ${this.name()}
+        </text>
+
+        <text id="v${this.id}" x="${this.x}" y="${this.y}" class="value-label">
+            ${this.desc()}
+        </text>
         `
 
         if (this.parent != null) {
@@ -74,6 +84,8 @@ class DndNode {
                     fill="${color}" stroke="black" stroke-width="1px"
                     onclick="selectNode(${this.id})" />
                 ` + area.innerHTML
+            
+            this.parent.update()
         }
     }
 
@@ -90,6 +102,54 @@ class DndNode {
         else {
             target.style.stroke = "black"
             target.style.strokeWidth = "1px"
+        }
+
+        let textTarget = document.getElementById(`t${this.id}`)
+        textTarget.x.baseVal[0].value = this.x
+        textTarget.y.baseVal[0].value = this.y
+
+        let valTarget = document.getElementById(`v${this.id}`)
+        valTarget.x.baseVal[0].value = this.x
+        valTarget.y.baseVal[0].value = this.y
+        valTarget.innerHTML = this.desc()
+    }
+
+    name() {
+        if (this.parent == null) { return "--root--" }
+        if (this.parent.type == "object") { return this.key }
+        if (this.parent.type == "array")  { return `index ${this.key}` }
+        return "--error--"
+    }
+
+    desc() {
+        let isStr   = this.type == "string"
+        let isInt   = this.type == "int"
+        let isFloat = this.type == "float"
+        let isNull  = this.type == "null"
+        let isBool  = this.type == "boolean"
+        let simpleType = isStr || isInt || isFloat || isNull || isBool
+
+        if (simpleType) {
+            let strValue = `${this.value}`
+            if (this.type == "string") {
+                strValue = `"${strValue}"`
+            }
+
+            if (strValue.length > 14) {
+                let lastChar = strValue[strValue.length - 1]
+                return strValue.slice(0, 11) + "..." + lastChar
+            }
+            return strValue
+        }
+
+        if (this.type == "array") { 
+            return `${this.value.length} elements` 
+        }
+
+        if (this.type == "object") {
+            let count = 0
+            for (let key in this.value) { count += 1 }
+            return `${count} keys`
         }
     }
 }
