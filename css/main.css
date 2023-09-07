@@ -34,5 +34,16 @@ body {
 }
 
 rect {
-    transform: translate(-64px, -32px)
+    transform: translate(-64px, -32px);
+}
+
+.name-label {
+    font-family: monospace;
+    font-weight: bold;
+    transform: translate(-56px, -16px);
+}
+
+.value-label {
+    font-family: monospace;
+    transform: translate(-56px, 8px);
 }
