@@ -33,7 +33,7 @@ Using client-side HTML 5 (which includes JS 6 and CSS 3) a GUI tool with a drag-
 ## Deployment
 It is intended that this tool shall be freely accessible - free as in freedom and free beer, both. Hence, now that the essential features have been created, the tool is deployed using GitHub Pages.
 
-You can find the JSON Maker on this [Github Pages link](https://github.com/Theocrat/json-maker)
+You can find the JSON Maker on this [Github Pages link](https://theocrat.github.io/json-maker)
 
 ## Acknowledgements
 
