@@ -70,10 +70,10 @@ Using client-side HTML 5 (which includes JS 6 and CSS 3) a GUI tool with a drag-
   [ ] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
 ```
 
-## Deployment
-It is intended that this tool shall be freely accessible - free as in freedom and free beer, both. Hence, now that the essential features have been created, the tool shall soon be deployed using GitHub Pages.
+## Deployment / "Installation"
+It is intended that this tool shall be freely accessible - free as in freedom and free beer, both. Hence, now that the essential features have been created, the tool has been [deployed using GitHub Pages](https://theocrat.github.io/json-maker/).
 
-This will take about half an hour. I will update this readme with the relevant link :)
+Of course, you are free to deploy a copy of this tool anywhere you please. It uses client-side HTML exclusively, so you do not need to worry about servers and resources. You can just double-click the `index.html` file and run it in your browser. If you have a modern browser (Firefox, Chrome, etc.) then it will work.
 
 ## Acknowledgements
 
