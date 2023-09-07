@@ -31,9 +31,13 @@ Using client-side HTML 5 (which includes JS 6 and CSS 3) a GUI tool with a drag-
 ```
 
 ## Deployment
-It is intended that this tool shall be freely accessible - free as in freedom and free beer, both. Hence, once essential features are created, the tool shall be deployed using GitHub Pages. On such occassion, this Readme shall carry a hyperlink to the tool. Further, the tool shall carry a hyperlink to this repository, so that the user knows where to complain if there are bugs, and where to contribute if there are ideas.
+It is intended that this tool shall be freely accessible - free as in freedom and free beer, both. Hence, once essential features are created, the tool shall be deployed using GitHub Pages. On such occassion, this Readme shall carry a hyperlink to the tool. 
+
+Further, the tool shall carry a hyperlink to this repository, so that the user knows where to complain if there are bugs, and where to contribute if there are ideas.
 
 ## Acknowledgements
 
-### 1. Kaustubh Roy
-Nothing is done unless someone thinks of doing it. The idea of building a drag-and-drop JSON builder using client-side HTML5 was born during a brainstorming session with my colleague and friend [Kaustubh Roy](https://github.com/kaustubhroyvlabs). We have collaborated before - on my [Random Walk project](https://github.com/Theocrat/RandomWalk) - and Kaustubh has always been a tremendous support and a great source of ideas for me.
+### Kaustubh Roy
+Nothing is done unless someone thinks of doing it. The idea of building a drag-and-drop JSON builder using client-side HTML5 was born during a brainstorming session with my colleague and friend [Kaustubh Roy](https://github.com/kaustubhroyvlabs).
+
+We have collaborated before - on my [Random Walk project](https://github.com/Theocrat/RandomWalk) - and Kaustubh has always been a tremendous support and a great source of ideas for me.
