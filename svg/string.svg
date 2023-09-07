@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 12.699999 12.7"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="string.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="6.4039519"
+     inkscape:cx="-1.0149983"
+     inkscape:cy="30.762255"
+     inkscape:window-width="1366"
+     inkscape:window-height="695"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="9.4604536"
+       y="14.886014"
+       width="34.668553"
+       height="14.746282"
+       id="rect12847" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-74.494017,-125.99298)">
+    <path
+       id="path12040"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
+       d="M 80.981993 127.92206 A 5.8746462 3.8170512 0 0 0 75.107416 131.73888 A 5.8746462 3.8170512 0 0 0 76.983271 134.53458 C 76.866147 134.82711 76.733245 135.13032 76.583812 135.42445 C 76.193513 136.19265 74.798903 137.38787 74.826813 137.41347 C 74.858227 137.44235 76.816489 136.79443 77.788906 136.36857 C 78.482372 136.06487 79.079061 135.7061 79.488544 135.4291 A 5.8746462 3.8170512 0 0 0 80.981993 135.5557 A 5.8746462 3.8170512 0 0 0 86.856569 131.73888 A 5.8746462 3.8170512 0 0 0 80.981993 127.92206 z " />
+    <g
+       aria-label="&quot;.....&quot;"
+       transform="matrix(0.26458332,0,0,0.26458332,75.225342,125.96189)"
+       id="text12845"
+       style="font-family:'CMU Bright';-inkscape-font-specification:'CMU Bright';white-space:pre;shape-inside:url(#rect12847);display:inline;stroke-width:0.254">
+      <path
+         d="m 10.408938,20.992375 0.504,-2.628 c 0.024,-0.144 0.036,-0.276 0.036,-0.384 0,-0.492 -0.348,-0.84 -0.816,-0.84 -0.4680005,0 -0.8160005,0.348 -0.8160005,0.828 0,0.12 0.012,0.252 0.036,0.396 l 0.504,2.628 z m 2.664,0 0.504,-2.628 c 0.024,-0.144 0.036,-0.276 0.036,-0.384 0,-0.492 -0.336001,-0.84 -0.816,-0.84 -0.468,0 -0.816,0.348 -0.816,0.828 0,0.12 0.012,0.252 0.036,0.396 l 0.504,2.628 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14728" />
+      <path
+         d="m 15.12494,23.908375 c -0.624,0 -1.128,0.504 -1.128,1.128 0,0.612 0.504,1.128 1.116,1.128 0.636,0 1.14,-0.504 1.14,-1.128 0,-0.624 -0.504,-1.128 -1.128,-1.128 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14730" />
+      <path
+         d="m 18.460938,23.908375 c -0.624,0 -1.128,0.504 -1.128,1.128 0,0.612 0.504,1.128 1.116,1.128 0.636,0 1.14,-0.504 1.14,-1.128 0,-0.624 -0.504,-1.128 -1.128,-1.128 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14732" />
+      <path
+         d="m 21.796937,23.908375 c -0.624,0 -1.128,0.504 -1.128,1.128 0,0.612 0.504,1.128 1.116,1.128 0.636,0 1.14,-0.504 1.14,-1.128 0,-0.624 -0.504,-1.128 -1.128,-1.128 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14734" />
+      <path
+         d="m 25.132935,23.908375 c -0.624,0 -1.128,0.504 -1.128,1.128 0,0.612 0.504,1.128 1.116,1.128 0.636,0 1.14,-0.504 1.14,-1.128 0,-0.624 -0.504,-1.128 -1.128,-1.128 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14736" />
+      <path
+         d="m 28.468934,23.908375 c -0.624,0 -1.128,0.504 -1.128,1.128 0,0.612 0.504,1.128 1.116,1.128 0.636,0 1.14,-0.504 1.14,-1.128 0,-0.624 -0.504,-1.128 -1.128,-1.128 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14738" />
+      <path
+         d="m 31.084932,20.992375 0.504,-2.628 c 0.024,-0.144 0.036,-0.276 0.036,-0.384 0,-0.492 -0.348,-0.84 -0.816,-0.84 -0.468,0 -0.816,0.348 -0.816,0.828 0,0.12 0.012,0.252 0.036,0.396 l 0.504,2.628 z m 2.664,0 0.504,-2.628 c 0.024,-0.144 0.036,-0.276 0.036,-0.384 0,-0.492 -0.336,-0.84 -0.816,-0.84 -0.468,0 -0.816,0.348 -0.816,0.828 0,0.12 0.012,0.252 0.036,0.396 l 0.504,2.628 z"
+         style="font-weight:bold;font-family:C059;-inkscape-font-specification:'C059 Bold'"
+         id="path14740" />
+    </g>
+  </g>
+</svg>
