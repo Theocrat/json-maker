@@ -26,12 +26,16 @@ body {
 
 .toolbox-button {
     width: 60px;
-    height: 60px;
+    height: 75px;
 }
 
 .button-image {
     width: 48px;
     height: 48px;
+}
+
+.button-label {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 rect {
