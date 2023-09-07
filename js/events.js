@@ -49,6 +49,9 @@ function place(type) {
         if (t_or_f.toLowerCase() == "t") {
             promptedValue = true
         }
+        else {
+            promptedValue = false
+        }
     }
 
     if (type == "int") {
@@ -86,5 +89,6 @@ function createNode() {
 
         let newNode = new DndNode(parent, type, key, value)
         createdObjects.push(newNode)
+        generateJSON()
     }
 }
