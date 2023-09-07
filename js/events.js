@@ -49,6 +49,7 @@ function place(type) {
 
     if (selectedItem.type == "object") {
         promptedKey = prompt("Enter the KEY to which this child will be mapped")
+        if (promptedKey == null) { return }
     }
     
     if (type == "boolean") {
@@ -59,18 +60,22 @@ function place(type) {
         else {
             promptedValue = false
         }
+        if (promptedValue == null) { return }
     }
 
     if (type == "int") {
         promptedValue = parseInt(prompt("Enter the integer value"))
+        if (promptedValue == null) { return }
     }
 
     if (type == "float") {
         promptedValue = parseFloat(prompt("Enter the float value"))
+        if (promptedValue == null) { return }
     }
 
     if (type == "string") {
         promptedValue = prompt("Enter the string value")
+        if (promptedValue == null) { return }
     }
     
     interactiveState.type = "place"
