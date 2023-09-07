@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Creator</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/render.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
+    <script type="text/javascript" src="js/tojson.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+</head>
+<body>
+    <table width="100%">
+        <tr>
+            <td width="80%">
+                <svg id="constructionArea">
+                    <!-- This is the graphical drag-and-drop interface -->
+                </svg>
+            </td>
+            <td width="20%">
+                <div id="toolbox">
+                    <!-- This toolbox area contains drag-and-drop buttons -->
+
+                    <button class="toolbox-button">
+                        <image src="svg/null.svg" class="button-image"/>
+                    </button>
+
+                    <button class="toolbox-button">
+                        <image src="svg/boolean.svg" class="button-image"/>
+                    </button>
+                    
+                    <button class="toolbox-button">
+                        <image src="svg/int.svg" class="button-image"/>
+                    </button>
+
+                    <button class="toolbox-button">
+                        <image src="svg/float.svg" class="button-image"/>
+                    </button>
+                    
+                    <button class="toolbox-button">
+                        <image src="svg/string.svg" class="button-image"/>
+                    </button>
+
+                    <button class="toolbox-button">
+                        <image src="svg/array.svg" class="button-image"/>
+                    </button>
+
+                    <button class="toolbox-button">
+                        <image src="svg/object.svg" class="button-image"/>
+                    </button>
+                </div>
+                <div>
+                    <!-- This is where the output JSON code appears -->
+                    <textarea id="jsonCode">{}</textarea>    
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
