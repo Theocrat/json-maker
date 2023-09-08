@@ -154,6 +154,18 @@ function cancelChanges() {
     deselectAll()
 }
 
+function parseAppropriately(type, value) {
+    // Helper function for changing values in graph nodes
+    if (type == "string")  { return value }
+    if (type == "int")     { return parseInt(value) }
+    if (type == "float")   { return parseFloat(value) }
+    if (type == "boolean") {
+        if (value.length == 0) { return false }
+        if (value.toLowerCase()[0] == 't') { return true }
+        return false
+    }
+}
+
 function makeChanges() {
     let setKey = document.querySelector("#setKey")
     let setValue = document.querySelector("#setValue")
@@ -166,7 +178,10 @@ function makeChanges() {
     }
 
     if (!setValue.disabled) {
-        interactiveState.target.value = setValue.value
+        interactiveState.target.value = parseAppropriately(
+            interactiveState.target.type,
+            setValue.value
+        )
     }
 
     interactiveState.target.update()
