@@ -45,10 +45,19 @@ rect {
 .name-label {
     font-family: monospace;
     font-weight: bold;
+    font-size: 12px;
     transform: translate(-56px, -16px);
+}
+
+.type-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 12px;
+    transform: translate(-56px, -2px);
 }
 
 .value-label {
     font-family: monospace;
-    transform: translate(-56px, 8px);
+    font-size: 12px;
+    transform: translate(-56px, 18px);
 }

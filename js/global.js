@@ -20,7 +20,8 @@ var output = null
 const generatedJSON = {}
 
 // Current tree of drag-and-drop objects created
-const createdObjects = []
+const 
+createdObjects = []
 
 // Class for representing objects built with drag and drop
 class DndNode {
@@ -33,6 +34,9 @@ class DndNode {
         this.x = mouse.x
         this.y = mouse.y
         this.selected = false
+
+        this.edgesTo   = []
+        this.edgesFrom = []
         
         if (this.parent != null) {
             if (this.parent.type == "object") {
@@ -63,12 +67,18 @@ class DndNode {
             x="${this.x}" y="${this.y}"
             fill="${color}" stroke="black" stroke-width="1px"
             width="128px", height="64px" 
-            onclick="selectNode(${this.id})" 
+            onmouseup="selectNode(${this.id})" 
+            onmousedown="moveNode(${this.id})"
         />
         
         <text id="t${this.id}" x="${this.x}" y="${this.y}" class="name-label">
             ${this.name()}
         </text>
+
+        <text id="d${this.id}" x="${this.x}" y="${this.y}" class="type-label">
+            ${this.type}
+        </text>
+        
 
         <text id="v${this.id}" x="${this.x}" y="${this.y}" class="value-label">
             ${this.desc()}
@@ -76,8 +86,11 @@ class DndNode {
         `
 
         if (this.parent != null) {
+            let edge_id = `e${this.id}_${this.parent.id}`
+            this.edgesTo.push(edge_id)
+            this.parent.edgesFrom.push(edge_id)
             area.innerHTML = `
-                <line id="${this.id}_${this.parent.id}" 
+                <line id="${edge_id}" 
                     x1="${this.parent.x}"
                     y1="${this.parent.y}"
                     x2="${this.x}" y2="${this.y}"
@@ -108,15 +121,38 @@ class DndNode {
         textTarget.x.baseVal[0].value = this.x
         textTarget.y.baseVal[0].value = this.y
 
+        let typeTarget = document.getElementById(`d${this.id}`)
+        typeTarget.x.baseVal[0].value = this.x
+        typeTarget.y.baseVal[0].value = this.y
+
         let valTarget = document.getElementById(`v${this.id}`)
         valTarget.x.baseVal[0].value = this.x
         valTarget.y.baseVal[0].value = this.y
         valTarget.innerHTML = this.desc()
+
+        this.edgesTo.forEach(edge_id => {
+            let edge = document.querySelector(`#${edge_id}`)
+            edge.x2.baseVal.value = this.x
+            edge.y2.baseVal.value = this.y
+        })
+
+        this.edgesFrom.forEach(edge_id => {
+            let edge = document.querySelector(`#${edge_id}`)
+            edge.x1.baseVal.value = this.x
+            edge.y1.baseVal.value = this.y
+        })
     }
 
     name() {
         if (this.parent == null) { return "--root--" }
-        if (this.parent.type == "object") { return this.key }
+        if (this.parent.type == "object") { 
+            let key = this.key 
+            if (key.length > 14) {
+                let lastChar = key[key.length - 1]
+                return key.slice(0, 11) + "..." + lastChar
+            }
+            return key
+        }
         if (this.parent.type == "array")  { return `index ${this.key}` }
         return "--error--"
     }

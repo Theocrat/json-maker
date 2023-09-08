@@ -1,7 +1,5 @@
 function selectNode(id) {
-    let selectMode = interactiveState.type == "select" 
-    let changeMode = interactiveState.type == "change"
-    if (selectMode || changeMode) {
+    if (interactiveState.type == "move") {
         if (interactiveState.type == "change") {
             deselectAll()
         }
@@ -24,6 +22,21 @@ function deselectAll() {
     }
 }
 
+
+function moveNode(id) {
+    let selectMode = interactiveState.type == "select" 
+    let changeMode = interactiveState.type == "change"
+    deselectAll()
+    
+    if (selectMode || changeMode) {
+        interactiveState.type   = "move"
+        interactiveState.target = {
+            "node": createdObjects[id],
+            "xoff": createdObjects[id].x - mouse.x,
+            "yoff": createdObjects[id].y - mouse.y
+        }
+    }
+}
 
 function place(type) {
     if (interactiveState.type == "place") {

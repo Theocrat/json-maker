@@ -9,21 +9,25 @@ When clashes occur between an inexperienced individual and an intolerant parser,
 ## Objectives
 Using client-side HTML 5 (which includes JS 6 and CSS 3) a GUI tool with a drag-and-drop interface implementing the following features are to be constructed in this project:
 ```md
+Legends:
+-------
 [ ] -> Not completed
 [.] -> Partially Completed
 [X] -> Completed
 [!] -> Encountered obstacle while building this
 
+Status:
+------
   [x] Toolbox with interface buttons, which helpful images
   [X] Text area for displaying the output JSON
   [X] Large interactive region for placing and connecting components on
   [X] Functionality: Components created when interface buttons are pressed.
   [X] Components thus created can be placed in the interactive region
   [X] Components thus created are linked by visible lines to parent components.
-  [.] Those components are interactive, response to clicks, allow changing their values and keys
+  [ ] Those components are interactive, response to clicks, allow changing their values and keys
   [ ] Those components carry text detailing whats in them
   [X] Components are of different types, depending on datatype
-  [ ] Components, once placed, can be dragged and rearranged
+  [X] Components, once placed, can be dragged and rearranged
   [ ] Components, once placed, can be deleted
   [X] Real-time appearance of JSON code in textarea as components are placed or deleted
   [ ] Graph so generated is remembered using `localStorage` or equivalent and is not lost upon refreshing

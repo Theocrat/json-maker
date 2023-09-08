@@ -17,6 +17,13 @@ function readyDndArea() {
         else {
             hoverNode.style.visibility = "hidden"
         }
+
+        if (interactiveState.type == "move") {
+            let target = interactiveState.target
+            target.node.x = mouse.x + target.xoff
+            target.node.y = mouse.y + target.yoff
+            target.node.update()
+        }
     } )
 
     let rootObject = new DndNode(null, "object", null, {})
