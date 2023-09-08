@@ -30,4 +30,6 @@ function readyDndArea() {
     rootObject.x = area.width.baseVal.value  / 2
     rootObject.y = area.height.baseVal.value / 2
     rootObject.update()
+
+    loadState()
 }
