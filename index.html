@@ -84,5 +84,37 @@
             </td>
         </tr>
     </table>
+
+    <div id="config">
+        <table id="configTable">
+            <tr>
+                <td>Set Key:</td>
+                <td><input type="text" id="setKey" /></td>
+            </tr>
+
+            <tr>
+                <td>Set Value:</td>
+                <td><input type="text" id="setValue" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button class="config-button config-ok" 
+                            onclick="makeChanges()">
+                        Make Changes
+                    </button>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button class="config-button config-cancel" 
+                            onclick="cancelChanges()">
+                        Cancel
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>

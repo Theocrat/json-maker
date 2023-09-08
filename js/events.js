@@ -117,3 +117,62 @@ function createNode() {
         generateJSON()
     }
 }
+
+
+function changeSettings(id) {
+    interactiveState.type = "config"
+    interactiveState.target = createdObjects[id]
+
+    document.querySelector("#config").style.display = "block"
+    
+    let setKey = document.querySelector("#setKey")
+    setKey.value = interactiveState.target.key
+    if (createdObjects[id].key == null) { setKey.disabled = true }
+    else if (createdObjects[id].parent.type != "object") { 
+        setKey.disabled = true 
+    } 
+    else { setKey.disabled = false }
+
+    let setValue = document.querySelector("#setValue")
+    let type = interactiveState.target.type
+    if (type != "object" && type != "array"){
+        setValue.value = interactiveState.target.value
+        if (createdObjects[id].type == "null") { setValue.disabled = true }
+        else { setValue.disabled = false }
+    }
+    else {
+        setValue.value = "[parent object]"
+        setValue.disabled = true
+    }
+}
+
+function cancelChanges() {
+    interactiveState.type = "select"
+    interactiveState.target = "none"
+    
+    document.querySelector("#config").style.display = "none"
+    deselectAll()
+}
+
+function makeChanges() {
+    let setKey = document.querySelector("#setKey")
+    let setValue = document.querySelector("#setValue")
+
+    if (!setKey.disabled) {
+        let parent = interactiveState.target.parent
+        delete parent.value[interactiveState.target.key]
+        interactiveState.target.key = setKey.value
+        parent.value[interactiveState.target.key] = interactiveState.target
+    }
+
+    if (!setValue.disabled) {
+        interactiveState.target.value = setValue.value
+    }
+
+    interactiveState.target.update()
+    generateJSON()
+
+    // The below line is a poor choice of coding standards, but pardon the
+    // lack of taste here. It can be changed later.
+    cancelChanges()
+}

@@ -69,6 +69,7 @@ class DndNode {
             width="128px", height="64px" 
             onmouseup="selectNode(${this.id})" 
             onmousedown="moveNode(${this.id})"
+            ondblclick="changeSettings(${this.id})"
         />
         
         <text id="t${this.id}" x="${this.x}" y="${this.y}" class="name-label">
@@ -120,6 +121,7 @@ class DndNode {
         let textTarget = document.getElementById(`t${this.id}`)
         textTarget.x.baseVal[0].value = this.x
         textTarget.y.baseVal[0].value = this.y
+        textTarget.innerHTML = this.name()
 
         let typeTarget = document.getElementById(`d${this.id}`)
         typeTarget.x.baseVal[0].value = this.x

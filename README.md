@@ -24,8 +24,8 @@ Status:
   [X] Functionality: Components created when interface buttons are pressed.
   [X] Components thus created can be placed in the interactive region
   [X] Components thus created are linked by visible lines to parent components.
-  [ ] Those components are interactive, response to clicks, allow changing their values and keys
-  [ ] Those components carry text detailing whats in them
+  [X] Those components are interactive, response to clicks, allow changing their values and keys
+  [X] Those components carry text detailing whats in them
   [X] Components are of different types, depending on datatype
   [X] Components, once placed, can be dragged and rearranged
   [ ] Components, once placed, can be deleted
