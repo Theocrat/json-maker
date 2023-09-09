@@ -1,100 +1,102 @@
-var store = {}
+class Archive {
+    constructor(node) {
+        if (node.isLeaf()) {
+            this.x     = node.x
+            this.y     = node.y
+            this.key   = node.key
+            this.type  = node.type
+            this.leaf  = true
+            this.value = node.value
+        }
 
-function dumpLeaf(id) {
-    let node = createdObjects[id]
-    return {
-        "id": node.id,
-        "parent_id": node.parent.id,
-        "key": node.key,
-        "value": node.value,
-        "x": node.x,
-        "y": node.y,
-        "type": node.type
+        if (node.type == "array") {
+            this.x     = node.x
+            this.y     = node.y
+            this.key   = node.key
+            this.type  = node.type
+            this.value = node.value.map(item => (new Archive(item)))
+            this.leaf  = false
+        }
+
+        if (node.type == "object") {
+            this.x     = node.x
+            this.y     = node.y
+            this.key   = node.key
+            this.type  = node.type
+            this.value = {}
+            this.leaf  = false
+
+            for (let key in node.value) {
+                this.value[key] = new Archive(node.value[key])
+            }
+        }
     }
 }
 
-function dumpArray(id) {
-    let node = createdObjects[id]
-    return {
-        "id": node.id,
-        "parent_id": node.parent.id,
-        "key": node.key,
-        "values": node.value.map(child => dumpNode(child)),
-        "x": node.x,
-        "y": node.y,
-        "type": node.type
-    }
-}
-
-function dumpObject(id) {
-    let node = createdObjects[id]
-
-    let values = {}
-    for (key in node.value) {
-        key = dumpNode(node.value[key])
+function loadArchive(archive, parent) {
+    if (archive.leaf) {
+        let node = new DndNode(parent, archive.type, archive.key, archive.value)
+        node.x = archive.x
+        node.y = archive.y
+        node.update()
+        return node
     }
 
-    return {
-        "id": node.id,
-        "parent_id": node.parent.id,
-        "key": node.key,
-        "values": values,
-        "x": node.x,
-        "y": node.y,
-        "type": node.type
+    if (archive.type == "array") {
+        let node = new DndNode(parent, archive.type, archive.key, [])
+        node.x = archive.x
+        node.y = archive.y
+        node.update()
+        archive.value.forEach(child => node.value.push(loadArchive(child, node)))
+        return node
     }
-}
 
-function dumpNode(id) {
-    let node = createdObjects[id]
-    if (node.isLeaf()) { dumpLeaf(node) }
-    if (node.type == "array")  { dumpArray(node)  }
-    if (node.type == "object") { dumpObject(node) }
+    if (archive.type == "object") {
+        let node = new DndNode(parent, archive.type, archive.key, {})
+        node.x = archive.x
+        node.y = archive.y
+        node.update()
+        for (let key in archive.value) {
+            node.value[key] = loadArchive(archive.value[key], node)
+        }
+        return node
+    }
 }
 
 function saveState() {
-    let rootObject = createdObjects[0]
-    store = dumpNode(rootObject)
+    let archive = new Archive(createdObjects[0])
+    let saveString = JSON.stringify(archive)
+    localStorage.saveData = saveString
 }
 
-function loadNodesRecursively(root, parent) {
-    if (root.type == "array") {
-        let tentativeArrayNode = new DndNode(
-            parent,
-            root.type,
-            root.key,
-            []
-        )
-        tentativeArrayNode.value = root.values.map(
-            child => loadNodesRecursively(child, tentativeArrayNode)
-        )
-        return tentativeArrayNode
+function emptyState() {
+    // First, remove all the "created objects"
+    while (createdObjects.length > 0) {
+        createdObjects.pop()
     }
 
-    if (root.type == "object") {
-        let tentativeObjectNode = new DndNode(
-            parent,
-            root.type,
-            root.key,
-            {}
-        )
-        for (key in root.values) {
-            tentativeObjectNode.value[key] = loadNodesRecursively(
-                root.values[key],
-                tentativeObjectNode
-            )
-        }
-        return tentativeObjectNode
-    }
+    // Then wipe out the entire 'area' of rendered components
+    area.innerHTML = `
+        <!-- This is the graphical drag-and-drop interface -->
 
-    return new DndNode(
-        parent,
-        root.type,
-        root.key,
-        root.value
-    )
+        <rect id="hoverNode" style="visibility: hidden;"
+              x="0" y="0" width="128" height="64"
+              fill="#ccc9" stroke="#0009" stroke-width="1px" />
+    `
 }
 
 function loadState() {
-    loadNodesRecursively(store, null)
+    if (localStorage.saveData == undefined) {
+        let rootObject = new DndNode(null, "object", null, {})
+        rootObject.x = area.width.baseVal.value  / 2
+        rootObject.y = area.height.baseVal.value / 2
+        rootObject.update()
+    }
+
+    else {
+        let archive = JSON.parse(localStorage.saveData)
+        loadArchive(archive, null)
+    }
+
+    generateJSON()
 }

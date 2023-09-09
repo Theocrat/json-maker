@@ -113,7 +113,6 @@ function createNode() {
         interactiveState.target = "none"
 
         let newNode = new DndNode(parent, type, key, value)
-        createdObjects.push(newNode)
         generateJSON()
     }
 }
@@ -196,6 +195,7 @@ function deleteGraph() {
     let confirmation = confirm("This will delete the entire graph")
     if (!confirmation) { return }
     
-    delete localStorage.graphDataSave
-    location.reload()
+    delete localStorage.saveData
+    emptyState()
+    loadState()
 }

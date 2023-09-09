@@ -192,9 +192,9 @@ class DndNode {
     }
 
     isLeaf() {
-        if (this.type == "array")  { return true }
-        if (this.type == "object") { return true }
-        return false
+        if (this.type == "array")  { return false }
+        if (this.type == "object") { return false }
+        return true
     }
 }
 

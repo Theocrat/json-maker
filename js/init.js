@@ -25,11 +25,6 @@ function readyDndArea() {
             target.node.update()
         }
     } )
-
-    let rootObject = new DndNode(null, "object", null, {})
-    rootObject.x = area.width.baseVal.value  / 2
-    rootObject.y = area.height.baseVal.value / 2
-    rootObject.update()
-
-    // loadState()
+    
+    loadState()
 }

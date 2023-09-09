@@ -30,7 +30,7 @@ Phase I:
   [X] Components, once placed, can be dragged and rearranged
   [.] Components, once placed, can be deleted
   [X] Real-time appearance of JSON code in textarea as components are placed or deleted
-  [!] Graph so generated is remembered using `localStorage` or equivalent and is not lost upon refreshing
+  [X] Graph so generated is remembered using `localStorage` or equivalent and is not lost upon refreshing
 
 Phase II:
 --------
