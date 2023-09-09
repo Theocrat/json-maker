@@ -16,8 +16,8 @@ Legends:
 [X] -> Completed
 [!] -> Encountered obstacle while building this
 
-Status:
-------
+Phase I:
+-------
   [x] Toolbox with interface buttons, which helpful images
   [X] Text area for displaying the output JSON
   [X] Large interactive region for placing and connecting components on
@@ -28,10 +28,15 @@ Status:
   [X] Those components carry text detailing whats in them
   [X] Components are of different types, depending on datatype
   [X] Components, once placed, can be dragged and rearranged
-  [ ] Components, once placed, can be deleted
+  [.] Components, once placed, can be deleted
   [X] Real-time appearance of JSON code in textarea as components are placed or deleted
   [X] Graph so generated is remembered using `localStorage` or equivalent and is not lost upon refreshing
-  [X] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
+
+Phase II:
+--------
+  [ ] Introductory help to new user - should be on overlaying div that can be removed
+  [ ] Help button which shows the introductory help to the user again
+  [ ] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
 ```
 
 ## Deployment

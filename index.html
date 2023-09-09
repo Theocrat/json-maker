@@ -71,6 +71,12 @@
                             <label class="button-label">Object</label>
                         </button>
 
+                        <button class="toolbox-button" onclick="deleteGraph()">
+                            <image src="svg/trash.svg" class="button-image"/>
+                            <br/>
+                            <label class="button-label">Trash</label>
+                        </button>
+
                         <button class="toolbox-button" onclick="window.open(`https://github.com/Theocrat/json-maker`)">
                             <image src="svg/github.svg" class="button-image"/>
                             <br/>
@@ -86,6 +92,7 @@
     </table>
 
     <div id="config">
+        <!-- This is the dialog box which allows you to change the node key or value -->
         <table id="configTable">
             <tr>
                 <td>Set Key:</td>

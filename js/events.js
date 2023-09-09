@@ -191,3 +191,11 @@ function makeChanges() {
     // lack of taste here. It can be changed later.
     cancelChanges()
 }
+
+function deleteGraph() {
+    let confirmation = confirm("This will delete the entire graph")
+    if (!confirmation) { return }
+    
+    delete localStorage.graphDataSave
+    location.reload()
+}
