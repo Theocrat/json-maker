@@ -190,6 +190,12 @@ class DndNode {
             return `${count} keys`
         }
     }
+
+    isLeaf() {
+        if (this.type == "array")  { return true }
+        if (this.type == "object") { return true }
+        return false
+    }
 }
 
 // Interactive state is the state associated with what exactly a click is
