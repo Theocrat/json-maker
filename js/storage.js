@@ -47,7 +47,7 @@ function loadArchive(archive, parent) {
         node.x = archive.x
         node.y = archive.y
         node.update()
-        archive.value.forEach(child => node.value.push(loadArchive(child, node)))
+        archive.value.forEach(child => {loadArchive(child, node)})
         return node
     }
 
@@ -57,7 +57,7 @@ function loadArchive(archive, parent) {
         node.y = archive.y
         node.update()
         for (let key in archive.value) {
-            node.value[key] = loadArchive(archive.value[key], node)
+            loadArchive(archive.value[key], node)
         }
         return node
     }

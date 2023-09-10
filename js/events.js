@@ -199,3 +199,12 @@ function deleteGraph() {
     emptyState()
     loadState()
 }
+
+
+function openHelp() {
+    document.querySelector("#help").style.display = "block"
+}
+
+function closeHelp() {
+    document.querySelector("#help").style.display = "none"
+}

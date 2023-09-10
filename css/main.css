@@ -100,3 +100,24 @@ rect {
 .config-cancel {
     background-color: #b46;
 }
+
+#help {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width:  100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0008;
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    overflow: auto;
+}
+
+.center-this {
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    margin-top: auto;
+}

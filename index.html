@@ -13,8 +13,8 @@
     <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
 </head>
-<body onload="readyDndArea()">
-    <table width="100%">
+<body onload="readyDndArea()" overflow="hidden">
+    <table width="100%" overflow="hidden">
         <tr>
             <td width="80%">
                 <svg id="constructionArea" onclick="createNode()">
@@ -77,6 +77,14 @@
                             <label class="button-label">Trash</label>
                         </button>
 
+                        <hr/>
+
+                        <button class="toolbox-button" onclick="openHelp()">
+                            <image src="svg/help.svg" class="button-image"/>
+                            <br/>
+                            <label class="button-label">Help</label>
+                        </button>
+
                         <button class="toolbox-button" onclick="window.open(`https://github.com/Theocrat/json-maker`)">
                             <image src="svg/github.svg" class="button-image"/>
                             <br/>
@@ -122,6 +130,12 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div id="help" onclick="closeHelp()">
+        <div class="center-this">
+            <img src="help.png" />
+        </div>
     </div>
 </body>
 </html>

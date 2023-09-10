@@ -26,5 +26,8 @@ function readyDndArea() {
         }
     } )
     
+    if (localStorage.saveData == undefined) {
+        openHelp()
+    }
     loadState()
 }
