@@ -9,10 +9,14 @@ body {
     height: 95vh;
 }
 
-#jsonCode {
-    width: 100%;
-    resize: none;
+#outputSection {
     height: 52vh;
+}
+
+#jsonCode {
+    width: calc(100% - 4px);
+    resize: none;
+    height: calc(100% - 30px);
 }
 
 #toolbox {
@@ -124,4 +128,35 @@ rect {
     vertical-align: middle;
     margin: auto;
     margin-top: auto;
+}
+
+button.output-buttons {
+    width: 32%;
+}
+
+#importDialogBox {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width:  100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0008;
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    overflow: auto;
+}
+
+div.dialog-box {
+    width: 80%;
+    background-color: #fff;
+    height: calc(100vh - 40px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea#importBox {
+    width: 80%;
+    height: 80%;
+    resize: none;
 }

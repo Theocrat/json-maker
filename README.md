@@ -36,11 +36,11 @@ Phase II:
 --------
   [X] Introductory help to new user - should be on overlaying div that can be removed
   [X] Help button which shows the introductory help to the user again
-  [ ] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
+  [X] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
   [ ] Make the area where drag-and-drop components are placed scrollable, OR
   [ ] Prevent components from being dragged off the edge of the area
   [ ] Dragging is not enabled on phone for some reason, investigate and fix
-  [ ] Download button to download JSON
+  [X] Download button to download the JSON output
 ```
 
 ## Deployment

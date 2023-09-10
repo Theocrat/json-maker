@@ -21,6 +21,7 @@ function generateRecursively(root) {
 function generateJSON() {
     let rootNode = createdObjects[0]
     let outputJSON = generateRecursively(rootNode)
-    output.innerHTML = JSON.stringify(outputJSON, null, 2)
+    generatedJSON = JSON.stringify(outputJSON, null, 2)
+    output.innerHTML = generatedJSON
     saveState()
 }

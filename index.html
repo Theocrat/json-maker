@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/storage.js"></script>
     <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/expimp.js"></script>
 </head>
 <body onload="readyDndArea()" overflow="hidden">
     <table width="100%" overflow="hidden">
@@ -91,9 +92,21 @@
                             <label class="button-label">Repo</label>
                         </button>
                 </div>
-                <div>
+                <div id="outputSection">
                     <!-- This is where the output JSON code appears -->
-                    <textarea id="jsonCode">{}</textarea>    
+                    <textarea id="jsonCode">{}</textarea>
+                    <br/>    
+                    <button class="output-buttons" onclick="downloadJSON()">
+                        Download
+                    </button> 
+                    
+                    <button class="output-buttons" onclick="exportGraph()">
+                        Export
+                    </button> 
+                    
+                    <button class="output-buttons" onclick="importGraph()">
+                        Import
+                    </button>
                 </div>
             </td>
         </tr>
@@ -150,6 +163,15 @@
     <div id="help" onclick="closeHelp()">
         <div class="center-this">
             <img src="help.png" />
+        </div>
+    </div>
+
+    <div id="importDialogBox" onclick="closeHelp()">
+        <div class="center-this dialog-box">
+            <p>Enter the JSON code exported from the image below:</p>
+            <textarea id="importBox"></textarea> <br/>
+            <button onclick="importData()">Import</button>
+            <button onclick="cancelImport()">Cancel</button>
         </div>
     </div>
 </body>
