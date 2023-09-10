@@ -7,6 +7,7 @@ function selectNode(id) {
         interactiveState.target = createdObjects[id]
         createdObjects[id].selected = true
         createdObjects[id].update()
+        saveState()
     }
 }
 
@@ -207,4 +208,16 @@ function openHelp() {
 
 function closeHelp() {
     document.querySelector("#help").style.display = "none"
+}
+
+function deleteNode() {
+    let node = interactiveState.target
+    if (node.id != 0) {
+        node.deleted = true
+        saveState()
+        emptyState()
+        loadState()
+        generateJSON()
+    }
+    cancelChanges()
 }

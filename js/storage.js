@@ -14,8 +14,14 @@ class Archive {
             this.y     = node.y
             this.key   = node.key
             this.type  = node.type
-            this.value = node.value.map(item => (new Archive(item)))
+            this.value = []
             this.leaf  = false
+
+            node.value.forEach(item => {
+                if (!item.deleted) {
+                    this.value.push(new Archive(item))
+                }
+            })
         }
 
         if (node.type == "object") {
@@ -27,7 +33,9 @@ class Archive {
             this.leaf  = false
 
             for (let key in node.value) {
-                this.value[key] = new Archive(node.value[key])
+                if (!node.value[key].deleted) {
+                    this.value[key] = new Archive(node.value[key])
+                }
             }
         }
     }

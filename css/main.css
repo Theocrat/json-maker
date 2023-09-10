@@ -98,7 +98,11 @@ rect {
 }
 
 .config-cancel {
-    background-color: #b46;
+    background-color: #888;
+}
+
+.config-delete {
+    background-color: #d46;
 }
 
 #help {

@@ -34,9 +34,11 @@ class DndNode {
         this.x = mouse.x
         this.y = mouse.y
         this.selected = false
-
+        
         this.edgesTo   = []
         this.edgesFrom = []
+        
+        this.deleted = false
         
         if (this.parent != null) {
             if (this.parent.type == "object") {
