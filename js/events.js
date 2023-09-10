@@ -213,11 +213,19 @@ function closeHelp() {
 function deleteNode() {
     let node = interactiveState.target
     if (node.id != 0) {
+        if (!node.isLeaf()) {
+            let confirmation = confirm(
+                "Deleting this block will delete all its children."
+            )
+            if (!confirmation) { return }
+        }
         node.deleted = true
         saveState()
         emptyState()
         loadState()
         generateJSON()
+    } else {
+        alert("You cannot delete the root node.")
     }
     cancelChanges()
 }
