@@ -1,7 +1,16 @@
 function downloadJSON() {
     let generated_json = new Blob([generatedJSON], {type: "file/json"})
     let url = window.URL.createObjectURL(generated_json)
-    window.open(url)
+    let fname = prompt("Enter a name for the output (no extension required):")
+    if (fname == null) { fname = "graph" }
+    document.querySelector("#secret").innerHTML = `
+        <a id="hidden_downloader" download="${fname}.json" 
+           href="${url}">
+            this
+        </a>
+    `
+    document.querySelector("#hidden_downloader").click()
+    document.querySelector("#secret").innerHTML = ""
 }
 
 function exportGraph() {
@@ -9,7 +18,17 @@ function exportGraph() {
     let graphData = JSON.stringify(archive, null, 2)
     let workspace_save = new Blob([graphData], {type: "file/json"})
     let url = window.URL.createObjectURL(workspace_save)
-    window.open(url)
+    
+    let fname = prompt("Enter a name for the output (no extension required):")
+    if (fname == null) { fname = "graph" }
+    document.querySelector("#secret").innerHTML = `
+        <a id="hidden_downloader" download="${fname}.graph" 
+           href="${url}">
+            this
+        </a>
+    `
+    document.querySelector("#hidden_downloader").click()
+    document.querySelector("#secret").innerHTML = ""
 }
 
 function importGraph() {

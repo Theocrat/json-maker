@@ -41,6 +41,11 @@ Phase II:
   [ ] Prevent components from being dragged off the edge of the area
   [ ] Dragging is not enabled on phone for some reason, investigate and fix
   [X] Download button to download the JSON output
+
+Documentation:
+-------------
+  [ ] Add brief docstrings to the methods
+  [ ] Add a documentation directory with extensive markdown documentation
 ```
 
 ## Deployment
