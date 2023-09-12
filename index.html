@@ -161,17 +161,34 @@
     </div>
 
     <div id="help" onclick="closeHelp()">
+        <!-- 
+            This is the Help Diagram which is displayed to first-timers and 
+            when the Help button is clicked in the toolbar
+        -->
         <div class="center-this">
             <img src="help.png" />
         </div>
     </div>
 
     <div id="importDialogBox" onclick="closeHelp()">
+        <!--
+            This is the dialog box which handles the importing of exported
+            data from previous runs, allowing work to be transfered from one
+            machine to another
+        -->
         <div class="center-this dialog-box">
-            <p>Enter the JSON code exported from the image below:</p>
-            <textarea id="importBox"></textarea> <br/>
-            <button onclick="importData()">Import</button>
-            <button onclick="cancelImport()">Cancel</button>
+            <p>
+                Please upload the <span style="font-family:mono;">.graph
+                </span> file which was exported earlier with the Export button.
+            </p>
+            <input id="importFile" type="file"></input> <br/>
+            <div style="height:10px"></div>
+            <button onclick="importData()" class="import-buttons">
+                Import
+            </button>
+            <button onclick="cancelImport()" class="import-buttons">
+                Cancel
+            </button>
         </div>
     </div>
 

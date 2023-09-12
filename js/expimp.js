@@ -1,3 +1,12 @@
+const importFileReader = new FileReader()
+
+importFileReader.addEventListener("load", function () {
+    localStorage.saveData = importFileReader.result
+    emptyState()
+    loadState()
+    cancelImport()
+})
+
 function downloadJSON() {
     let generated_json = new Blob([generatedJSON], {type: "file/json"})
     let url = window.URL.createObjectURL(generated_json)
@@ -38,13 +47,10 @@ function importGraph() {
 }
 
 function importData() {
-    let importBox = document.querySelector("#importBox")
-    let importedData = importBox.value
-    localStorage.saveData = importedData
-    console.table(importedData)
-    emptyState()
-    loadState()
-   cancelImport()
+    let file = document.getElementById("importFile")
+    importFileReader.readAsText(file.files[0])
+    // The rest is handled by Import File Reader's promise resolution
+    // This is asynchronous, DO NOT try to implement it here.    
 }
 
 function cancelImport() {

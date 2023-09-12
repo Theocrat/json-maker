@@ -34,6 +34,7 @@ Phase I:
 
 Phase II:
 --------
+  [ ] Implement a method to rearrange array members (preferably drag-and-drop list?)
   [X] Introductory help to new user - should be on overlaying div that can be removed
   [X] Help button which shows the introductory help to the user again
   [X] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
