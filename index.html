@@ -169,29 +169,12 @@
             <img src="help.png" />
         </div>
     </div>
-
-    <div id="importDialogBox" onclick="closeHelp()">
-        <!--
-            This is the dialog box which handles the importing of exported
-            data from previous runs, allowing work to be transfered from one
-            machine to another
-        -->
-        <div class="center-this dialog-box">
-            <p>
-                Please upload the <span style="font-family:mono;">.graph
-                </span> file which was exported earlier with the Export button.
-            </p>
-            <input id="importFile" type="file"></input> <br/>
-            <div style="height:10px"></div>
-            <button onclick="importData()" class="import-buttons">
-                Import
-            </button>
-            <button onclick="cancelImport()" class="import-buttons">
-                Cancel
-            </button>
-        </div>
+       
+    <div id="secret" style="display:none"> </div>
+    
+    <div id="secretImport" style="display:none"></div>
+        <!-- Contains invisible but interactive elements for importing -->
+        <input id="importFile" type="file" onchange="importData()"/>
     </div>
-
-    <div id="secret" style="display:none"></div>
 </body>
 </html>

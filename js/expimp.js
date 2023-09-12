@@ -43,7 +43,7 @@ function exportGraph() {
 function importGraph() {
     let confirmation = confirm("This will delete the existing graph")
     if (!confirmation) { return }
-    document.querySelector("#importDialogBox").style.display = "block"
+    document.getElementById("importFile").click()
 }
 
 function importData() {
