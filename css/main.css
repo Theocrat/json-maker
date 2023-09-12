@@ -15,8 +15,9 @@ body {
 
 #jsonCode {
     width: calc(100% - 4px);
-    resize: none;
     height: calc(100% - 30px);
+    resize: none;
+    overflow: auto;
 }
 
 #toolbox {
