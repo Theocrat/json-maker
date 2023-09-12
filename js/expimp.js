@@ -11,7 +11,7 @@ function downloadJSON() {
     let generated_json = new Blob([generatedJSON], {type: "file/json"})
     let url = window.URL.createObjectURL(generated_json)
     let fname = prompt("Enter a name for the output (no extension required):")
-    if (fname == null) { fname = "graph" }
+    if (fname == null) { return }
     document.querySelector("#secret").innerHTML = `
         <a id="hidden_downloader" download="${fname}.json" 
            href="${url}">
@@ -29,7 +29,7 @@ function exportGraph() {
     let url = window.URL.createObjectURL(workspace_save)
     
     let fname = prompt("Enter a name for the output (no extension required):")
-    if (fname == null) { fname = "graph" }
+    if (fname == null) { return }
     document.querySelector("#secret").innerHTML = `
         <a id="hidden_downloader" download="${fname}.graph" 
            href="${url}">
@@ -49,6 +49,8 @@ function importGraph() {
 function importData() {
     let file = document.getElementById("importFile")
     importFileReader.readAsText(file.files[0])
+    file.value = null
+    file.files = null
     // The rest is handled by Import File Reader's promise resolution
     // This is asynchronous, DO NOT try to implement it here.    
 }
