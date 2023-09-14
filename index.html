@@ -17,11 +17,13 @@
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/expimp.js"></script>
 </head>
-<body onload="readyDndArea()" overflow="hidden">
+<body onload="readyDndArea()" onresize="resizeScreen()" overflow="hidden">
     <table width="100%" overflow="hidden">
         <tr>
             <td width="80%">
-                <svg id="constructionArea" onclick="createNode()">
+                <svg id="constructionArea" onclick="createNode()"
+                onmousedown="beginScrollingArea()" 
+                onmouseup="endScrollingArea()">
                     <!-- This is the graphical drag-and-drop interface -->
 
                     <rect id="hoverNode" style="visibility: hidden;"
@@ -175,7 +177,7 @@
        
     <div id="secret" style="display:none"> </div>
     
-    <div id="secretImport" style="display:none"></div>
+    <div id="secretImport" style="display:none">
         <!-- Contains invisible but interactive elements for importing -->
         <input id="importFile" type="file" onchange="importData()"/>
     </div>

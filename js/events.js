@@ -229,3 +229,32 @@ function deleteNode() {
     }
     cancelChanges()
 }
+
+
+// For view scrolling, and the necessary tool we have to build for manually
+// handling resizing if we want to enable scrolling
+function resizeScreen() {
+    view.w = area.width.baseVal.value
+    view.h = area.height.baseVal.value
+    area.setAttribute("viewBox", `${view.x} ${view.y} ${view.w} ${view.h}`) 
+}
+
+function beginScrollingArea() {
+    if (document.querySelector("rect:hover") != null) {
+        return
+    }
+    
+    deselectAll()
+    interactiveState.type = "scrolling"
+    interactiveState.target = {
+        x: mouse.x,
+        y: mouse.y,
+        view_x: view.x,
+        view_y: view.y
+    }
+}
+
+function endScrollingArea() {
+    interactiveState.type = "select"
+    interactiveState.target = "none"
+}

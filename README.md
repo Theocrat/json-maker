@@ -37,11 +37,13 @@ Phase II:
   [ ] Implement a method to rearrange array members (preferably drag-and-drop list?)
   [X] Introductory help to new user - should be on overlaying div that can be removed
   [X] Help button which shows the introductory help to the user again
-  [X] Graph so generated can be exported, and then imported - by exporting or importing a field in `localStorage` etc.
-  [ ] Make the area where drag-and-drop components are placed scrollable, OR
-  [ ] Prevent components from being dragged off the edge of the area
+  [X] Graph so generated can be exported, and then imported - by exporting or importing 
+      the content of field in `localStorage` etc.
+  [X] Make the area where drag-and-drop components are placed scrollable, OR
   [ ] Dragging is not enabled on phone for some reason, investigate and fix
   [X] Download button to download the JSON output
+  [ ] An option to generate graph from an ordinary JSON (not a `.graph` file) so that user can begin
+      with an take a JSON file which already exists and edit it using this JSON maker
 
 Documentation:
 -------------
