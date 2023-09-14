@@ -98,9 +98,9 @@ class DndNode {
             this.edgesTo.push(edge_id)
             this.parent.edgesFrom.push(edge_id)
             let triangle = getTriangleABC(
-                this.x, this.y,
                 this.parent.x,
-                this.parent.y
+                this.parent.y,
+                this.x, this.y
             )
             let xA = triangle.xA
             let yA = triangle.yA

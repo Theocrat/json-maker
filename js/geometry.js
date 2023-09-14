@@ -18,7 +18,13 @@ function getTriangleABC(x1, y1, x2, y2) {
     // Point A is the point (xA, yA) in the normal coordinate system which 
     // represents the vertex of the arrow pointing at the child object. In this
     // new reference, this point shall be (a, ma)
-    let a = h + ARROW_SIZE/Math.sqrt(1 + m*m)
+    let a = 0
+    if (x1 < x2) {
+        a = h + ARROW_SIZE/Math.sqrt(1 + m*m)
+    } else {
+        a = h - ARROW_SIZE/Math.sqrt(1 + m*m)
+    }
+    
 
     // Points B and C are related to one another by a quadratic equation, which
     // yields the points of intersection between the circle of radius 5 with
