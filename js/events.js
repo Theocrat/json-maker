@@ -255,6 +255,10 @@ function beginScrollingArea() {
 }
 
 function endScrollingArea() {
+    if (document.querySelector("rect:hover") != null) {
+        return
+    }
+    
     interactiveState.type = "select"
     interactiveState.target = "none"
 }

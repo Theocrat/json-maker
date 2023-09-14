@@ -16,8 +16,8 @@ function readyDndArea() {
             if (hoverNode.style.visibility != "visible") {
                 hoverNode.style.visibility = "visible"
             }
-            hoverNode.x.baseVal.value  = mouse.x
-            hoverNode.y.baseVal.value  = mouse.y
+            hoverNode.x.baseVal.value  = mouse.x + view.x
+            hoverNode.y.baseVal.value  = mouse.y + view.y
         }
         else {
             hoverNode.style.visibility = "hidden"
