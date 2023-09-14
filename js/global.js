@@ -91,6 +91,17 @@ class DndNode {
             let edge_id = `e${this.id}_${this.parent.id}`
             this.edgesTo.push(edge_id)
             this.parent.edgesFrom.push(edge_id)
+            let triangle = getTriangleABC(
+                this.x, this.y,
+                this.parent.x,
+                this.parent.y
+            )
+            let xA = triangle.xA
+            let yA = triangle.yA
+            let xB = triangle.xB
+            let yB = triangle.yB
+            let xC = triangle.xC
+            let yC = triangle.yC
             area.innerHTML = `
                 <line id="${edge_id}" 
                     x1="${this.parent.x}"
@@ -98,6 +109,11 @@ class DndNode {
                     x2="${this.x}" y2="${this.y}"
                     fill="${color}" stroke="black" stroke-width="1px"
                     onclick="selectNode(${this.id})" />
+                
+                <path id="t${edge_id}"
+                      d="M ${xA} ${yA} L ${xB} ${yB} L ${xC} ${yC} Z"
+                      fill="black"
+                      stroke="black" />
                 ` + area.innerHTML
             
             this.parent.update()
@@ -137,12 +153,46 @@ class DndNode {
             let edge = document.querySelector(`#${edge_id}`)
             edge.x2.baseVal.value = this.x
             edge.y2.baseVal.value = this.y
+
+            let triangle = getTriangleABC(
+                edge.x1.baseVal.value,
+                edge.y1.baseVal.value,
+                edge.x2.baseVal.value,
+                edge.y2.baseVal.value,
+                
+            )
+            let xA = triangle.xA
+            let yA = triangle.yA
+            let xB = triangle.xB
+            let yB = triangle.yB
+            let xC = triangle.xC
+            let yC = triangle.yC
+            let arrow_id = `t${edge_id}`
+            let arrow = document.getElementById(arrow_id)
+            arrow.setAttribute('d', `M ${xA} ${yA} L ${xB} ${yB} L ${xC} ${yC} Z`)
         })
 
         this.edgesFrom.forEach(edge_id => {
             let edge = document.querySelector(`#${edge_id}`)
             edge.x1.baseVal.value = this.x
             edge.y1.baseVal.value = this.y
+
+            let triangle = getTriangleABC(
+                edge.x1.baseVal.value,
+                edge.y1.baseVal.value,
+                edge.x2.baseVal.value,
+                edge.y2.baseVal.value,
+                
+            )
+            let xA = triangle.xA
+            let yA = triangle.yA
+            let xB = triangle.xB
+            let yB = triangle.yB
+            let xC = triangle.xC
+            let yC = triangle.yC
+            let arrow_id = `t${edge_id}`
+            let arrow = document.getElementById(arrow_id)
+            arrow.setAttribute('d', `M ${xA} ${yA} L ${xB} ${yB} L ${xC} ${yC} Z`)
         })
     }
 
