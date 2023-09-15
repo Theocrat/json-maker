@@ -36,8 +36,8 @@ class DndNode {
         this.key    = key
         this.value  = value
         
-        this.x = mouse.x
-        this.y = mouse.y
+        this.x = mouse.x + view.x
+        this.y = mouse.y + view.y
         this.selected = false
         
         this.edgesTo   = []
