@@ -264,6 +264,8 @@ interactiveState = {
     //    place:  Place a component where the click occurs
     //    change: A node has already been selected, now modify it
     //    drag:   Dragging, for moving a node
+    //    move:   Currently moving this node, but can also modify it or 
+    //            make new children for this node, or copy it to clipboard 
     "type":   "select",
     "target": "none"
 }

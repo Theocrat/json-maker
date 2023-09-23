@@ -42,6 +42,7 @@ Phase II:
   [X] Make the area where drag-and-drop components are placed scrollable, OR
   [ ] Dragging is not enabled on phone for some reason, investigate and fix
   [X] Download button to download the JSON output
+  [X] **Clipboard:** Copy and paste an entire branch
   [ ] An option to generate graph from an ordinary JSON (not a `.graph` file) so that user can begin
       with an take a JSON file which already exists and edit it using this JSON maker
 

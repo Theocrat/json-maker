@@ -13,6 +13,8 @@
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/tojson.js"></script>
     <script type="text/javascript" src="js/storage.js"></script>
+    <script type="text/javascript" src="js/clipboard.js"></script>
+
     <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/expimp.js"></script>
@@ -75,6 +77,20 @@
                             <image src="svg/object.svg" class="button-image"/>
                             <br/>
                             <label class="button-label">Object</label>
+                        </button>
+                        
+                        <hr/>
+
+                        <button class="toolbox-button" onclick="copyBranch()">
+                            <image src="svg/copy.svg" class="button-image"/>
+                            <br/>
+                            <label class="button-label">Copy</label>
+                        </button>
+
+                        <button class="toolbox-button" onclick="pasteBranch()">
+                            <image src="svg/paste.svg" class="button-image"/>
+                            <br/>
+                            <label class="button-label">Paste</label>
                         </button>
 
                         <button class="toolbox-button" onclick="deleteGraph()">
