@@ -259,6 +259,19 @@ function endScrollingArea() {
         return
     }
     
+    localStorage.view = JSON.stringify(view)
     interactiveState.type = "select"
     interactiveState.target = "none"
+}
+
+function panToRootObject() {
+    let x = createdObjects[0].x - (view.w / 2)
+    let y = createdObjects[0].y - (view.h / 2)
+    view.x = x
+    view.y = y
+
+    let viewBox = `${view.x} ${view.y} ${view.w} ${view.h}`
+    area.setAttribute("viewBox", viewBox)
+    localStorage.view = JSON.stringify(view)
+
 }

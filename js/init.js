@@ -5,6 +5,13 @@ function readyDndArea() {
     view.w = area.width.baseVal.value
     view.h = area.height.baseVal.value
 
+    if (localStorage.view != undefined) {
+        let savedView = JSON.parse(localStorage.view)
+        view.x = savedView.x
+        view.y = savedView.y
+    }
+    localStorage.view = JSON.stringify(view)
+
     area.setAttribute("viewBox", `${view.x} ${view.y} ${view.w} ${view.h}`)
 
     area.addEventListener("mousemove", function (event) {
