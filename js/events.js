@@ -146,6 +146,11 @@ function changeSettings(id) {
     }
 }
 
+function changeSettingsForSelected() {
+    let id = interactiveState.target.id
+    changeSettings(id)   
+}
+
 function cancelChanges() {
     interactiveState.type = "select"
     interactiveState.target = "none"
