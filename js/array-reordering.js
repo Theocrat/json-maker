@@ -150,6 +150,10 @@ function closeReorderingWithChanges() {
     if (dialogVars.orderMethod.value == "insert") {
         alert("Not Implemented!")
     }
+
+    for (let pos = 0; pos < dialogVars.childCount; pos++) {
+        dialogVars.parentArray.value[pos].key = pos
+    }
     
     generateJSON()
     saveState()
