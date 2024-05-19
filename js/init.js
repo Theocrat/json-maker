@@ -50,4 +50,6 @@ function readyDndArea() {
         openHelp()
     }
     loadState()
+    
+    initializeReorderingDialog()
 }

@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/tojson.js"></script>
     <script type="text/javascript" src="js/storage.js"></script>
     <script type="text/javascript" src="js/clipboard.js"></script>
+    <script type="text/javascript" src="js/array-reordering.js"></script>
 
     <script type="text/javascript" src="js/events.js"></script>
     <script type="text/javascript" src="js/init.js"></script>
@@ -84,6 +85,13 @@
                             <image src="svg/settings.svg" class="button-image"/>
                             <br/>
                             <label class="button-label">Settings</label>
+                        </button>
+
+                        <button class="settings-button" 
+                                onclick="openArrayOrderingDialogBox()">
+                            <image src="svg/ordering.svg" class="button-image"/>
+                            <br/>
+                            <label class="button-label">Reorder</label>
                         </button>
 
                         <button class="toolbox-button" onclick="panToRootObject()">
@@ -189,6 +197,64 @@
                             onclick="deleteNode()">
                         Delete
                     </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="arrayOrder">
+        <!-- This is the dialog box for reordering the children of an array -->
+        <table id="arrayOrderingTable">
+            <tr id="sourceIndexField">
+                <td>Source Index:</td>
+                <td>
+                    <select onchange="setupTargetIndex()">
+                        <option>--placeholder--</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr id="targetIndexField">
+                <td>Target Index:</td>
+                <td>
+                    <select>
+                        <option>--placeholder--</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <div id="orderMethodField">
+            <td>Method for rearrangement:</td>
+            <td>
+                <select id="orderMethodSelect">
+                    <option value="replace">
+                        Exchange source and target
+                    </option>
+                    <option value="insert">
+                        Insert source before target
+                    </option>
+                </select>
+            </td>
+        </div>
+        
+            <div>
+                <button class="config-button config-ok" 
+                        onclick="closeReorderingWithChanges()">
+                    Make Changes
+                </button>
+                </div>
+
+            <div>
+                <button class="config-button config-cancel" 
+                        onclick="closeReordering()">
+                    Cancel
+                </button>
+            </div>
+
+            <tr>
+                <td colspan="2">
+                    &nbsp;
                 </td>
             </tr>
         </table>

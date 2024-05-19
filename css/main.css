@@ -134,7 +134,7 @@ button.output-buttons {
     width: 32%;
 }
 
-#importDialogBox {
+#importDialogBox, #arrayOrder {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width:  33%; /* Full width (cover the whole page) */
